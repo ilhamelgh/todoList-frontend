@@ -3,15 +3,15 @@ import TodoItem from "./TodoItem.jsx";
 const CardItems = ({items, onDeleteItem}) => {
   const isEmpty = items.length === 0
 
-  const handleDeleteItem = (item) => {
-    onDeleteItem(item)
+  const handleDeleteItem = (itemId) => {
+    onDeleteItem(itemId)
   }
 
   return (
     <div>
       { !isEmpty &&
-        items.map((item, index) => (
-          <TodoItem item={item} key={index} onDelete={handleDeleteItem} />
+        items.map((item) => (
+          <TodoItem item={item} key={item.id} onDelete={handleDeleteItem} />
         ))
       }
     </div>

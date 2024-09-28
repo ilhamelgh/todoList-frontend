@@ -1,14 +1,17 @@
 import { PlusCircleIcon } from "@heroicons/react/24/outline/index.js"
 import { useState } from "react"
 
+import itemService from "../../services/modules/item.service.js";
+
 const AddItem = ({onAdd}) => {
   const [item, setItem] = useState('')
 
-  const handleSubmitForm = (e) => {
+  const handleSubmitForm = async (e) => {
     e.preventDefault()
 
     if (item) {
-      onAdd(item)
+      await itemService.createItem({title: item})
+      onAdd()
       setItem('')
     }
   }
