@@ -8,13 +8,13 @@ const CardItems = ({items, onDeleteItem}) => {
   }
 
   return (
-    <div>
+    <ul>
       { !isEmpty &&
         items.map((item) => (
           <TodoItem item={item} key={item.id} onDelete={handleDeleteItem} />
         ))
       }
-    </div>
+    </ul>
   )
 }
 

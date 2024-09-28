@@ -6,8 +6,7 @@ const TodoItem = ({item, onDelete}) => {
   }
 
   return (
-    <div
-      id={`drag${item.id}`}
+    <li
       className={'flex items-center justify-between bg-gray-800 rounded p-6 mb-3'}
       draggable={true}
     >
@@ -15,7 +14,7 @@ const TodoItem = ({item, onDelete}) => {
       <button type={'button'} onClick={deleteItem}>
         <TrashIcon className={'w-6 text-rose-400'} />
       </button>
-    </div>
+    </li>
   )
 }
 
